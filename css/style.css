@@ -1,0 +1,231 @@
+:root{
+    --dark-gray: hsl(0, 0%, 63%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --very-dark-gray: hsl(0, 0%, 27%);
+}
+
+*{
+    margin:0;
+    box-sizing: border-box;
+    
+}
+
+
+body{
+    /* width: 100%; */
+    font-family: "League Spartan", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0px;
+    overflow:hidden;
+}
+
+.main{
+    border: 1px solid var(--very-dark-gray);
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas: 
+    "main"
+    "shop"
+    "image1"
+    "about"
+    "image2";
+}
+
+.main__hero{    
+    min-height: 350px;   
+    /* min-width: 350px; */
+    width: 100%;
+    background-image: url("../images/desktop-image-hero-1.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-area: main;
+}
+
+.main__nav{
+    display: flex;
+    /* margin:0; */
+}
+
+.main__links{
+    display: none;
+}
+
+.main__logo{
+    margin: 0 auto;
+}
+
+.main__controls{
+    background-color: var(--black);
+    display: flex;
+    width: 90px;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: main; 
+    justify-self: end;
+    align-self: end;
+}
+
+.main__arrows{
+    height: 50%;
+}
+
+.main__shop{
+    grid-area: shop;
+
+}
+
+.main__content{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.main__title{
+    color: var(--black);
+    font-size: 2rem;
+}
+
+.main__paragraph{
+    line-height: 1.5;
+    margin: 1em 0 2em;
+    color: var(--dark-gray);
+}
+
+.main__paragraph--about{
+    margin: 1em 0 0 0;
+}
+
+.main__cta{
+    text-decoration: none;
+    color: var(--very-dark-gray);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    
+}
+
+.main__arrow{
+    margin-left: 20px;
+}
+
+.main__bg{    
+    grid-area: image1;
+    width: 100%;  
+    min-height: 250px;
+    /* max-height: 400px; */
+    background-image: url("../images/image-about-dark.jpg");
+    background-size:cover;
+    /* justify-content: center;
+    align-items: center;
+    align-self: center; */
+    
+}
+
+.main__about{
+    grid-area:about;
+    padding: 50px 0 10px;
+}
+
+.main__title--h3{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.main__bg--second{
+    grid-area:image2;    
+    background-image: url("../images/image-about-light.jpg");
+    background-size: cover;
+    justify-content: center;   
+    
+}
+
+.attribution{
+    margin: 0 auto;
+    padding: 10px 0;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 16px;
+    font-size: .75rem;
+    text-align: center;
+    background-color: var(--dark-gray);   
+}
+
+
+@media (min-width:750px){
+    .container{
+        width: 85%;
+        padding: 70px 0;
+    }
+
+    .main{
+        flex:inline-flex;
+        /* max-height: 1024px; */
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas:
+        "main main main main shop shop shop"
+        "main main main main shop shop shop"
+        "main main main main shop shop shop"
+        "image1 image1 about about about image2 image2"
+        "image1 image1 about about about image2 image2";
+
+
+        
+        .main__controls{
+            grid-area: shop; 
+            justify-self: start;
+            width: 100px;
+            height: 40px;
+
+        }
+
+        .main__hamburguer{
+            display: none;
+        }
+
+        .main__links{
+            padding: 0;
+            display: grid;
+            grid-auto-flow: column;
+            gap: 1em;
+            margin-left: 10%;
+            
+        }
+        .main__list{
+            list-style:none;
+            margin-left: 20px;
+            
+        }
+
+        .main__link{
+            text-transform: lowercase;
+            text-decoration: none;
+            color:var(--white);
+
+        }
+        .main__logo{
+            margin:0;
+        }
+
+    }
+    @media (min-width:1000px){
+        .container{
+            width: 85%;
+            padding: 40px 0;
+        }
+
+}
+}
